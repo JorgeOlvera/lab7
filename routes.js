@@ -7,6 +7,13 @@ const User = require('./user.js')
 
 const rt = express.Router()
 
+rt.get('/', function(req, res) {
+  res.send({
+    info : "https://jorgeolveralab7.herokuapp.com/",
+    GET : "/users"
+  })
+})
+
 rt.get('/users', function(req, res) {
     User.find({}).then(function(users) {
       res.send(users)
